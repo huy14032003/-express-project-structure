@@ -1,0 +1,165 @@
+<%- include('../layouts/header') %>
+  <link rel="stylesheet" href="/css/style.css" />
+    <title>Register</title>
+  </head>
+  <body class="d-flex justify-content-center align-items-center">
+    <div class="wrapper d-flex">
+      <div class="d-flex align-items-center " style="margin-left: 10%;">
+        <div class="content-hello text-center">
+          <p style="font-weight: 800; font-size: 30px">I LOVE YOUUU !</p>
+        <p style="font-size: 20px">
+          Hope you have a good experience with my products, wish you a good
+          day.<i class="bi bi-balloon-heart-fill"></i>
+        </p>
+      </div>
+      </div>
+      
+      <div class="wrapper-content active d-flex justify-content-center">
+        <form
+          action=""
+          id="register"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <div class="container-form container-form-register">
+            <div class="title text-center mb-2"><span>Đăng ký</span></div>
+            <div class="username">
+              <div class="form-group email">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                  data-rule="isRequired,isEmail"
+                />
+           
+                <i class="bi bi-envelope-fill"></i>
+              </div>
+              <span class="warning error-message warning-email"></span>
+
+              <div class="form-group user">
+                <input
+                  type="text"
+                  name="user"
+                  id="user"
+                  placeholder="Username"
+                  data-rule="isRequired,minLength:1"
+                />
+            
+                <i class="bi bi-person-fill"></i>
+              </div>
+              <span class="warning error-message warning-user"></span>
+
+              <div class="form-group pass">
+                <input
+                  type="password"
+                  name="pass"
+                  id="pass"
+                  placeholder="Password"
+                  data-rule="isRequired,minLength:1"
+                />
+            
+                <i class="bi bi-lock-fill"></i>
+              </div>
+              <span class="warning error-message warning-pass"></span>
+            </div>
+
+            <div class="action">
+              <button type="submit">Đăng ký</button>
+              <p class="text-center mt-3">
+                Đã có tài khoản? <span class="moveSignIn">Đăng nhập</span>
+              </p>
+            </div>
+          </div>
+        </form>
+        <form
+          action=""
+          id="login"
+          class="d-flex justify-content-center align-items-center"
+        >
+          <div class="container-form container-form-login">
+            <div class="mb-4 title text-center"><span>Đăng nhập</span></div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="userLogin"
+                id="userLogin"
+                placeholder="Username"
+                data-rule="isRequired"
+              />
+          
+              <i class="bi bi-person-fill"></i>
+            </div>
+             <span class="warning error-message"></span>
+            <div class="form-group">
+              <input type="password" id="passLogin" placeholder="Password" data-rule="isRequired"/>
+          
+              <i class="bi bi-lock-fill"></i>
+            </div>
+           <span class="warning error-message"></span>
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="font-size: 12px"
+            >
+              <div class="d-flex justify-content-center align-items-center">
+                <input type="checkbox" name="remind" id="remind" />
+                <label for="remind">Show password</label>
+              </div>
+              <div class=""><a href="">Forgot password ?</a></div>
+            </div>
+            <div class="action">
+              <button type="submit">Đăng nhập</button>
+              <p class="text-center mt-3">
+                Chưa có tài khoản? <span class="moveSignUp">Đăng Ký</span>
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+<div class="popup">
+  <div class="popup-content">
+   
+  </div>
+</div>
+    <!-- Script xử lý -->
+    <script src="../libs/js/applib.js"></script>
+    <script src="../js/register.js"></script>
+    <script src="../js/login.js"></script>
+    <script>
+     const moveSignUp = document.querySelector('.moveSignUp');
+const moveSignIn = document.querySelector('.moveSignIn');
+const wrapperContent = document.querySelector('.wrapper-content');
+const contentHello = document.querySelector('.content-hello');
+
+// Hàm cập nhật nội dung lời chào
+function updateContent(message, note) {
+  contentHello.innerHTML = `
+    <p style="font-weight: 800; font-size: 30px">${message}</p>
+    <p style="font-size: 20px">
+      ${note} <i class="bi bi-balloon-heart-fill"></i>
+    </p>
+  `;
+}
+
+// Sự kiện chuyển sang Đăng nhập
+moveSignIn?.addEventListener('click', () => {
+  wrapperContent?.classList.add("active");
+  updateContent(
+    "I LOVE YOUUU !",
+    "Hope you have a good experience with my products, wish you a good day."
+  );
+});
+
+// Sự kiện chuyển sang Đăng ký
+moveSignUp?.addEventListener('click', () => {
+  wrapperContent?.classList.remove("active");
+  updateContent(
+    "Welcome to me !",
+    "If you already have an account, click log in."
+  );
+});
+
+    </script>
+  </body>
+</html>

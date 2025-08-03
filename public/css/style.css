@@ -1,0 +1,217 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "MyFont";
+  src: url("../font/DFVN\ Beauty\ Reflections.otf") format("opentype");
+}
+body {
+  backdrop-filter: blur(10px);
+  background: url("../images/img2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.wrapper {
+  position: relative;
+  width: 60rem; /* hoặc theo nhu cầu */
+  height: 30rem;
+  background: url("../images/img2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 2px 5px 15px #3e3e3ed1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.wrapper-content {
+  position: absolute;
+  right: 0;
+
+  height: 100%;
+  width: 40%;
+  color: #fffccf;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#register,
+#login {
+  background-color: rgba(0, 0, 0, 0.296);
+  position: absolute;
+  /* hạ thấp một chút để nằm giữa hơn */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: transform 0.6s ease;
+}
+#login {
+  transform: translateX(100%);
+}
+.container-form .title {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "MyFont", sans-serif;
+}
+.container-form {
+  width: 70%;
+}
+input[type="text"],
+input[type="password"] {
+  background-color: transparent;
+  border: none;
+  color: #fffccf;
+  margin: 5px 0 !important;
+  width: 100%;
+}
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: #fffccf;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+input:focus,
+input:active {
+  background-color: transparent;
+  outline: none;
+}
+.form-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 18px; */
+  width: 100%;
+}
+.form-group:not(:first-child) {
+  margin-top: 18px;
+}
+.form-group input {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.form-group i {
+  position: absolute;
+  right: 0;
+  color: #fffccf;
+}
+.form-group::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+
+  background-color: #fffccf;
+}
+.container-form button {
+  background-color: rgb(250, 72, 1);
+  color: #fffccf;
+  width: 100%;
+  height: 40px;
+  border-radius: 20px !important;
+  margin-top: 15px !important;
+}
+a {
+  text-decoration: none !important;
+  color: #fffccf !important;
+}
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #fffccf;
+}
+.content-hello {
+  width: 350px;
+  color: #fffccf;
+}
+
+.wrapper-content.active #login {
+  transform: translateX(-50%);
+  transition-delay: 0.6s;
+}
+.wrapper-content.active #register {
+  transform: translateX(100%);
+  transition-delay: 0s;
+}
+#register {
+  transition-delay: 0.6s;
+}
+.moveSignUp,
+.moveSignIn {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.moveSignUp:hover,
+.moveSignIn:hover {
+  font-weight: 600;
+}
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000005a;
+ 
+}
+.popup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 15px;
+   transform: scale(0);
+  animation: popupScale 0.4s ease-out forwards;
+}
+.popup-content img {
+  width: 100px;
+  height: 100px;
+}
+.popup button {
+  width: 150px;
+}
+.popup .title.error {
+  font-size: 25px;
+  font-weight: 800;
+  color: red;
+}
+.popup .title.success {
+  font-size: 25px;
+  font-weight: 800;
+  color: green;
+}
+@keyframes popupScale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

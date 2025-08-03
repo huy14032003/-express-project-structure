@@ -1,0 +1,38 @@
+<%- include('./header') %>
+<style>
+    .wrapper-container{
+          flex: 1;  
+        display: grid;
+        
+        grid-template-areas: 
+        "side nav"
+        "side main"
+        ;
+        grid-template-rows: 60px 1fr;
+        grid-template-columns: 200px 1fr;
+      height: 100vh;
+    }
+ 
+    .navbar
+    {
+        grid-area: nav;
+        background-color: #000;
+    }
+    .sidebar
+    {
+        grid-area: side;
+        background-color: #17f622;
+    }
+    .main
+
+    {
+        grid-area: main;
+        background-color: aqua;
+    }
+</style>
+<div class="wrapper-container">
+<%- include('./navbar') %>
+<%- include('./sidebar') %>
+<div class="main">
+    <%- body%>
+</div>
