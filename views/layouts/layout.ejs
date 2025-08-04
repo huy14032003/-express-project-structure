@@ -1,38 +1,82 @@
 <%- include('./header') %>
 <style>
-    .wrapper-container{
-          flex: 1;  
-        display: grid;
-        
-        grid-template-areas: 
-        "side nav"
-        "side main"
-        ;
-        grid-template-rows: 60px 1fr;
-        grid-template-columns: 200px 1fr;
-      height: 100vh;
-    }
- 
-    .navbar
-    {
-        grid-area: nav;
-        background-color: #000;
-    }
-    .sidebar
-    {
-        grid-area: side;
-        background-color: #17f622;
-    }
-    .main
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .wrapper-container {
+    flex: 1;
+    display: grid;
 
-    {
-        grid-area: main;
-        background-color: aqua;
-    }
+    grid-template-areas:
+      "side nav"
+      "side main";
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 240px 1fr;
+    height: 100vh;
+     transition: grid-template-columns 0.3s ease;
+  }
+
+  .navbar {
+    color: rgb(176, 180, 184);
+    grid-area: nav;
+    background-color: rgb(56, 65, 74);
+     transition: margin-left 0.3s ease;
+    padding: 0 20px !important;
+   
+  }
+  .sidebar {
+    grid-area: side;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    
+  }
+  .wrapper-container.collsapsed
+  {
+    grid-template-rows: 70px 1fr;
+    grid-template-columns: 80px 1fr;
+  }
+  .main {
+    grid-area: main;
+    background-color: rgb(245, 246, 247);
+     overflow-y: auto; 
+  }
+.sidebar .hiddenText {
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.3s ease, width 0.3s ease, transform 0.3s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Khi sidebar bị thu gọn */
+.wrapper-container.collsapsed .sidebar .hiddenText {
+ opacity: 0;
+  width: 0;
+  display: none;
+ transition: opacity 0.3s ease, width 0.3s ease, transform 0.3s ease-in-out;
+}
+.wrapper-container.collsapsed .sidebar .link
+{
+    display: flex !important;
+    justify-content: center;
+    align-items: center !important;
+    flex-direction: column;
+  
+}
+.wrapper-container.collsapsed .sidebar .item
+{
+    padding: 0;
+}
+.wrapper-container.collsapsed .sidebar i
+{
+    font-size: 25px;
+}
 </style>
 <div class="wrapper-container">
-<%- include('./navbar') %>
-<%- include('./sidebar') %>
-<div class="main">
-    <%- body%>
+  <%- include('./navbar') %>
+  <%- include('./sidebar') %>
+  <div class="px-4 main"><%- body%></div>
 </div>
+<script src="/js/layout.js"></script>

@@ -81,9 +81,9 @@ input:active {
   background-color: transparent;
   outline: none;
 }
-.form-group {
+.wrapper-form {
   position: relative;
-  display: flex;
+
   align-items: center;
   /* margin-bottom: 18px; */
   width: 100%;
@@ -101,7 +101,7 @@ input:active {
   right: 0;
   color: #fffccf;
 }
-.form-group::after {
+.wrapper-form::after {
   position: absolute;
   content: "";
   width: 100%;

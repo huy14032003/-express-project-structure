@@ -24,6 +24,12 @@ app.get('/', (req, res) => {
 app.get('/home', (req, res) => {
   res.render('pages/home', { title: 'Trang chủ' });
 });
+app.get('/admin', (req, res) => {
+  res.render('pages/admin', { title: 'Trang chủ' });
+});
+app.get('/dashboad', (req, res) => {
+  res.render('pages/dashboad', { title: 'Trang chủ' });
+});
 app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {

@@ -38,13 +38,13 @@
     }
 
 clearError(inputElement) {
-  const formGroup = inputElement.closest(this.formGroupSelect);
+  const formGroup = this.getParent(inputElement,this.option.formGroupSelect);
   if (formGroup) {
-    const messageElement = formGroup.querySelector(this.message); // chắc chắn lấy đúng thẻ error
+    const messageElement = formGroup.querySelector(this.option.message); // chắc chắn lấy đúng thẻ error
     if (messageElement) {
-      messageElement.innerText = '';
+      messageElement.innerHTML = '';
     }
-    formGroup.classList.remove('invalid');
+    inputElement.classList.remove('invalid');
   }
 }
 

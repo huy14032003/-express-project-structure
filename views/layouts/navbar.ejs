@@ -1,4 +1,152 @@
-<%- include('./header') %>
-<div class="navbar">
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z"/></svg>
+<style>
+  .menu-icon {
+    cursor: pointer;
+  }
+  .navbar i {
+    color: rgb(176, 180, 184);
+    font-size: 12px;
+    padding: 0;
+  }
+  .profile {
+    position: relative;
+    cursor: pointer;
+    padding: 23.5px 5px;
+    transition: all 0.3s ease;
+  }
+
+  .box {
+    position: absolute;
+    top: 100%;
+    right: 0px;
+    z-index: 999;
+    color: #000;
+    border: 1px solid#919191dd;
+    background-color: #fff;
+    width: 150px;
+    display: none;
+    cursor: pointer;
+    border-radius: 8px;
+
+  }
+  .profile:hover,.multi-lang:hover {
+    background-color: #6e6e6e52;
+  }
+.profile:hover .box{
+    display: block;
+}
+  .box.show,.box-multi.show {
+    display: block;
+  }
+  .box ul li:last-child {
+    border-top: 1px solid#b3b3b3;
+  }
+  .box ul li:hover {
+    background-color: rgba(179, 219, 247, 0.764);
+  }
+  .box ul li {
+    padding-left: 20px;
+    padding: 10px;
+  }
+  .box ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .box-multi ul li:last-child {
+    border-top: 1px solid#b3b3b3;
+  }
+  .box-multi ul li:hover {
+    background-color: rgba(179, 219, 247, 0.764);
+  }
+  .box-multi ul li {
+    padding-left: 20px;
+    padding: 10px;
+  }
+  .box-multi ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .multi-lang
+  {
+    position: relative;
+    cursor: pointer;
+    padding: 23.5px 5px;
+    transition: all 0.3s ease;
+  }
+  .multi-lang:hover .box-multi
+  {
+    display: block;
+  }
+  .box-multi
+  {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 999;
+    color: #000;
+    width: 150px;
+   border: 1px solid#919191dd;
+     border-radius: 8px;
+     display: none;
+    background-color: #fff;
+  }
+   .box-multi ul
+   {
+    list-style: none;
+   }
+</style>
+<div class="navbar ">
+  <div class="col-9">
+    <svg
+      class="menu-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+      <path
+        fill="currentColor"
+        d="M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z"
+      />
+    </svg>
+  </div>
+  <div class="col-3 d-flex justify-content-around align-items-center">
+    <div class="form">
+
+        <div class=" multi-lang">
+            <i class="bi bi-globe2"></i>
+            <span>Tiếng Việt</span>
+            <div class="box-multi">
+                <ul>
+                    <li>Tiếng Việt</li>
+                    <li>Tiếng Anh</li>
+                    <li>Tiếng Trung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="darkNight">
+      <i class="bi bi-moon-stars"></i>
+    </div>
+
+    <div
+      class="d-flex justify-content-center align-items-center gap-2 profile"
+    >
+      <div class="avatar">123</div>
+      <span class=""
+        >name
+        <i class="bi bi-chevron-down pt-1"></i>
+      </span>
+      <div class="box">
+        <ul>
+          <li>Profile</li>
+          <li>Setting</li>
+          <li>logout</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
