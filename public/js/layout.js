@@ -10,16 +10,14 @@ const iconArrow = document.querySelectorAll(
 const itemCollapse = document.querySelectorAll(".collapse");
 const profile=document.querySelector('.profile');
 const multiLang=document.querySelector('.multi-lang');
+const sidebar=document.querySelector('.sidebar')
 
-profile.addEventListener('click',()=>{
-  document.querySelector('.box').classList.toggle('show');
-})
-multiLang.addEventListener('click',()=>{
-  document.querySelector('.box-multi').classList.toggle('show');
-})
-
+let isClick=false;
 menuIcon.addEventListener("click", () => {
+  Wrapper.classList.toggle("open");
   Wrapper.classList.toggle("collsapsed");
+  isClick=!isClick
+  
   // Đóng tất cả các menu con
   allCollapse.forEach((collapse) => {
     collapse.classList.remove("show");
@@ -30,6 +28,17 @@ menuIcon.addEventListener("click", () => {
     arrow.classList.remove("rotate");
   });
 });
+sidebar.addEventListener("mouseenter", () => {
+    if (!isClick) {
+    Wrapper.classList.remove("collsapsed");
+  }
+});
+
+sidebar.addEventListener("mouseleave", () => {
+  if (!isClick) {
+    Wrapper.classList.add("collsapsed");
+  }
+}); 
 let isProcessing = false;
 
 toggle.forEach((item, index) => {

@@ -1,29 +1,40 @@
 <style>
   .sidebar a,
- .sidebar i {
+  .sidebar i {
     text-decoration: none;
     font-size: 16px;
     color: #000;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .sidebar span {
+    transition: all 0.3s ease-in-out;
+  }
+  .sidebar span:hover,
+  .sidebar a:hover,
+  .sidebar ul li a span:hover {
+    color: #868686;
   }
   .sidebar ul {
     list-style: none;
     text-wrap: nowrap;
     padding: 0 20px;
   }
- .sidebar ul li {
+  .sidebar ul li {
     padding-top: 18px;
   }
   .logo {
-    padding: 18px 0;
+    padding-top: 13px;
   }
 
   .bi-chevron-right.rotate {
     transform: rotate(90deg);
+    transition: all 0.3s ease-in-out;
   }
 </style>
 <div class="sidebar">
   <div
-    class="logo link text-center d-flex gap-2 justify-content-center align-items-center"
+    class="logo link text-center d-flex gap-2 justify-content-center align-items-center flex-column"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,6 +62,7 @@
         </g>
       </g>
     </svg>
+
     <span class="hiddenText">Quản lý tài chính</span>
   </div>
   <div class="link">
@@ -65,12 +77,29 @@
       </li>
 
       <li>
-        <a href="/admin">
+        <a
+          href=""
+          class="d-flex justify-content-between toggle"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse1"
+        >
           <span class="d-flex gap-2"
-            ><i class="bi bi-gear"></i>
-            <span class="hiddenText"> Admin</span>
-          </span>
+            ><i class="bi bi-graph-up-arrow"></i>
+            <span class="hiddenText"> Admin</span></span
+          >
+          <i class="bi bi-chevron-right hiddenText"></i>
         </a>
+        <div id="collapse1" class="collapse">
+          <ul>
+            <li>
+              <a href="/admin" class="d-flex gap-2"><i class="bi bi-patch-plus"></i><span class="hiddenText"> Create input salary</span></a>
+            </li>
+            <li>
+               <a href="###" class="d-flex gap-2"><i class="bi bi-patch-minus"></i><span class="hiddenText"> Create output salary</span></a>
+            </li>
+            <li><span class="hiddenText" >View control</span></li>
+          </ul>
+        </div>
       </li>
       <li>
         <a href="/dashboad">
@@ -95,9 +124,9 @@
         </a>
         <div id="collapse3" class="collapse">
           <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
+            <li><span class="hiddenText">1</span></li>
+            <li><span class="hiddenText">2</span></li>
+            <li><span class="hiddenText">3</span></li>
           </ul>
         </div>
       </li>

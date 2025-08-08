@@ -7,18 +7,18 @@
     font-size: 12px;
     padding: 0;
   }
-  .profile {
+   .navbar .profile {
     position: relative;
     cursor: pointer;
     padding: 23.5px 5px;
     transition: all 0.3s ease;
   }
 
-  .box {
+   .navbar .box {
     position: absolute;
     top: 100%;
     right: 0px;
-    z-index: 999;
+    z-index: 9999;
     color: #000;
     border: 1px solid#919191dd;
     background-color: #fff;
@@ -28,63 +28,61 @@
     border-radius: 8px;
 
   }
-  .profile:hover,.multi-lang:hover {
+  .navbar  .profile:hover,.multi-lang:hover {
     background-color: #6e6e6e52;
   }
-.profile:hover .box{
+  .navbar .profile:hover .box{
     display: block;
 }
-  .box.show,.box-multi.show {
-    display: block;
-  }
-  .box ul li:last-child {
+
+   .navbar .box ul li:last-child {
     border-top: 1px solid#b3b3b3;
   }
-  .box ul li:hover {
+    .navbar .box ul li:hover {
     background-color: rgba(179, 219, 247, 0.764);
   }
-  .box ul li {
+    .navbar .box ul li {
     padding-left: 20px;
     padding: 10px;
   }
-  .box ul {
+    .navbar .box ul {
     padding: 0;
     margin: 0;
     list-style: none;
   }
   
-  .box-multi ul li:last-child {
+   .navbar .box-multi ul li:last-child {
     border-top: 1px solid#b3b3b3;
   }
-  .box-multi ul li:hover {
+   .navbar .box-multi ul li:hover {
     background-color: rgba(179, 219, 247, 0.764);
   }
-  .box-multi ul li {
+   .navbar .box-multi ul li {
     padding-left: 20px;
     padding: 10px;
   }
-  .box-multi ul {
+   .navbar .box-multi ul {
     padding: 0;
     margin: 0;
     list-style: none;
   }
-  .multi-lang
+   .navbar .multi-lang
   {
     position: relative;
     cursor: pointer;
     padding: 23.5px 5px;
     transition: all 0.3s ease;
   }
-  .multi-lang:hover .box-multi
+   .navbar .multi-lang:hover .box-multi
   {
     display: block;
   }
-  .box-multi
+   .navbar .box-multi
   {
     position: absolute;
     top: 100%;
     right: 0;
-    z-index: 999;
+    z-index: 9999;
     color: #000;
     width: 150px;
    border: 1px solid#919191dd;
@@ -92,7 +90,7 @@
      display: none;
     background-color: #fff;
   }
-   .box-multi ul
+    .navbar .box-multi ul
    {
     list-style: none;
    }
