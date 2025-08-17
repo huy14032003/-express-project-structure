@@ -1,0 +1,17 @@
+
+table
+{
+    
+    border: 1px solid#585858 !important;
+}
+table th
+{
+       background-color: #a1b3bf !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 30px;
+}
+table tbody tr:nth-child(even)
+{
+    background-color: #e2e8eb !important;
+}

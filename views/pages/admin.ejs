@@ -1,10 +1,15 @@
 <link rel="stylesheet" href="/css/admin.css" />
 <div class="card carItem mt-2">
   <div class="content px-4 py-3">
+    <div class="title mb-2"><h5>Nhập Lương Tháng 8</h5></div>
     <div class="mb-3 d-flex justify-content-between row group1">
       <div class="inputName col-xl-4">
         <label for="">Họ tên người nhập</label>
-        <input type="text" class="form-control" placeholder="Ex:Trần Quang Huy" />
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ex:Trần Quang Huy"
+        />
       </div>
       <div class="inputDate col-xl-2">
         <label for="">Ngày nhập lương</label>
@@ -12,44 +17,57 @@
       </div>
       <div class="inputSalary col-xl-3">
         <label for="">Số tiền lương</label>
-        <input type="text" class="form-control" name="" id="" placeholder="Ex:9.500.000" />
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id=""
+          placeholder="Ex:9.500.000"
+        />
       </div>
       <div class="inputBank col-xl-3">
         <label for="">Ngân hàng nhận</label>
-        <input type="text" class="form-control" placeholder="Ex:Vietcombank"/>
+        <input type="text" class="form-control" placeholder="Ex:Vietcombank" />
       </div>
     </div>
-    <div class="inputNote gap-3 col-xl-12">
+    <div class="inputNote gap-3 mb-3 col-xl-12">
       <label for="">Ghi chú</label>
       <textarea name="" id="" placeholder="Nội dung ghi chú"></textarea>
     </div>
-    <div class=" mt-3 group2"> 
-      <div class="mb-2 form-input">
-        <div class="item">
-          <div class="inputDate d-flex justify-content-between">
-            <label for="">chia lương 1</label>
-            <i class="bi bi-trash3-fill delete"></i>
-          </div>
-          <div class="inputDate d-flex justify-content-between gap-2 mt-2">
-            <select name="" id="">
-              <option selected value="">----Chọn----</option>
-              <option value="">Nhà</option>
-              <option value="">Ăn</option>
-              <option value="">Đi lại</option>
-            </select>
-            <input type="text" class="form-control" placeholder="Số tiền" />
-            <input type="text" class="form-control" placeholder="ghi chú" name="" id="">
-          </div>
-        </div>
-      </div>
-      
-      <div class="addinput d-flex justify-content-end">
-        <i class="bi bi-plus-circle-fill plus"></i>
-      </div>
+      <div class="mb-3 submit">
+      <button class="btn btn-dark submit">submit</button>
     </div>
-    <div class="mt-3 submit">
-      <button >submit</button>
+    <div class="col-12  table">
+      <table class="table-responsive ">
+        <thead>
+    <tr>
+      <th>NO.</th>
+      <th>Ngày nhập</th>
+      <th>Số tiền</th>
+      <th>Ngân hàng</th>
+      <th>Ghi chú</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+      </table>
     </div>
+  
   </div>
 </div>
+
 <script src="/js/inputsalary.js"></script>
+<script>
+const tbody=document.querySelector('tbody')
+  for (let i = 0; i < 20; i++) {
+    const date =Math.floor(Math.random()*100);
+    const row = `<tr>
+      <td>${date}</td>
+      <td>${date}</td>
+      <td>${date}</td>
+      <td>${date}</td>
+      <td>${date}</td>
+    </tr>`;
+    
+    tbody.innerHTML += row;
+  }
+</script>

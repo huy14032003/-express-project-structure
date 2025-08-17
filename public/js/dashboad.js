@@ -18,7 +18,7 @@ var options = {
     },
   ],
   chart: {
-    height: 350,
+   height:370,
     type: "line",
     stacked: false,
   },
@@ -31,7 +31,7 @@ var options = {
   title: {
     text: "XYZ - Stock Analysis (2009 - 2016)",
     align: "left",
-    offsetX: 110,
+   
   },
   xaxis: {
     categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
@@ -110,13 +110,12 @@ var options = {
     fixed: {
       enabled: true,
       position: "topLeft", // topRight, topLeft, bottomRight, bottomLeft
-      offsetY: 30,
-      offsetX: 60,
+     
     },
   },
   legend: {
     horizontalAlign: "left",
-    offsetX: 40,
+  
   },
 };
 
@@ -127,16 +126,16 @@ var optionDonut = {
   chart: {
       type: 'donut',
       width: '100%',
-      height: 400
+      height:370,
   },
   dataLabels: {
-    enabled: false,
+    enabled: true,
   },
   plotOptions: {
     pie: {
       customScale: 0.8,
       donut: {
-        size: '75%',
+        size: '70%',
       },
       offsetY: 20,
     },
@@ -154,8 +153,8 @@ var optionDonut = {
   series: [21, 23, 19, 14, 6],
   labels: ['Clothing', 'Food Products', 'Electronics', 'Kitchen Utility', 'Gardening'],
   legend: {
-    position: 'left',
-    offsetY: 80
+    position: 'bottom',
+  
   }
 }
 

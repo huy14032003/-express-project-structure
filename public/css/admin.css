@@ -15,17 +15,7 @@
    max-height: 350px;
    overflow: auto;
 }
-.submit button
-{
-    width: 150px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: rgb(56, 65, 74);
-    color: rgb(255, 255, 255);
-}
-.submit button:hover{
-       background-color: rgb(46, 54, 61);
-}
+
 .form-input select
 {
     border: 1px solid #7a7a7abe;
@@ -51,3 +41,20 @@
 {
     color: rgb(1, 115, 1);
 }
+
+.table table
+{
+    width: 100%;
+    border: 1px solid#585858;
+}
+.table table thead th{
+    background-color: #a1b3bf;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 30px;
+}
+table tbody tr:nth-child(even)
+{
+    background-color: #e2e8eb;
+}
+

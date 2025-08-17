@@ -85,6 +85,7 @@
         action=""
         id="login"
         class="d-flex justify-content-center align-items-center"
+       
       >
         <div class="container-form container-form-login">
           <div class="mb-4 title text-center"><span>Đăng nhập</span></div>
@@ -93,7 +94,7 @@
 
               <input
                 type="text"
-                name="userLogin"
+                name="username"
                 id="userLogin"
                 placeholder="Username"
                 data-rule="isRequired"
@@ -111,6 +112,7 @@
                 id="passLogin"
                 placeholder="Password"
                 data-rule="isRequired"
+                name="password"
               />
               <i class="bi bi-lock-fill"></i>
             </div>
@@ -143,7 +145,7 @@
   <!-- Script xử lý -->
   <script src="../libs/js/applib.js"></script>
   <script src="../js/register.js"></script>
-  <script src="../js/login.js"></script>
+  <!-- <script src="../js/login.js"></script> -->
   <script>
     const moveSignUp = document.querySelector(".moveSignUp");
     const moveSignIn = document.querySelector(".moveSignIn");

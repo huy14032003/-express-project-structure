@@ -16,6 +16,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
 
 app.set('layout', 'layouts/layout');
+// app.set('layout', 'viewapplication');
 // ROUTES
 app.get('/', (req, res) => {
   res.render('pages/register', { layout: false,title: 'Đăng ký' });
@@ -29,6 +30,9 @@ app.get('/admin', (req, res) => {
 });
 app.get('/dashboad', (req, res) => {
   res.render('pages/dashboad', { title: 'Trang chủ' });
+});
+app.get('/outputsalary', (req, res) => {
+  res.render('pages/outputsalary', { title: 'Trang chủ' });
 });
 app.use('/api/auth', authRoutes);
 

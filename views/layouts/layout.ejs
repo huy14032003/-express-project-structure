@@ -15,7 +15,7 @@
     grid-template-rows: 70px 1fr;
     grid-template-columns: 80px 1fr;
     height: 100vh;
-    transition: grid-template-columns 0.3s ease;
+    transition: all 0.5s ease;
     position: relative;
     flex: 1;
   }
@@ -24,6 +24,7 @@
 .wrapper-container:not(.open) 
 {
   grid-template-columns: 240px 1fr;
+  transition: all 0.5s ease;
 }
   .navbar {
     grid-area: nav;
@@ -58,6 +59,7 @@
   }
   /* Khi sidebar mở rộng hoàn toàn */
   .wrapper-container:not(.collsapsed) .sidebar {
+    transition: all 0.5s ease;
     width: 240px;
     position: relative;
   }
@@ -72,7 +74,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
   }
 
   /* Khi mở rộng thì hiện chữ */
@@ -89,15 +91,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center !important;
+    
   }
   .sidebar ul
   {
-  transition: all 0.3s ease-in-out;  
+  transition: all 0.5s ease-in-out;  
   }
 .wrapper-container.collsapsed .sidebar ul
 {
   padding: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
   .wrapper-container.collsapsed .sidebar .item {
     padding: 0;

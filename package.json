@@ -12,6 +12,8 @@
   "description": "",
   "dependencies": {
     "apexcharts": "^5.3.2",
-    "express-ejs-layouts": "^2.5.1"
+    "ejs-mate": "^4.0.0",
+    "express-ejs-layouts": "^2.5.1",
+    "sweetalert2": "^11.22.4"
   }
 }
