@@ -13,7 +13,7 @@
   .sidebar span:hover,
   .sidebar a:hover,
   .sidebar ul li a span:hover {
-    color: #868686;
+    color: #777777;
   }
   .sidebar ul {
     list-style: none;
@@ -31,7 +31,10 @@
     transform: rotate(90deg);
     transition: all 0.3s ease-in-out;
   }
-
+.lever-2 a,.lever-2 i
+{
+  color: #adadad !important;
+}
 </style>
 <div class="sidebar">
   <div
@@ -85,20 +88,20 @@
           data-bs-target="#collapse1"
         >
           <span class="d-flex gap-2"
-            ><i class="bi bi-graph-up-arrow"></i>
+            ><i class="bi bi-cash-coin"></i>
             <span class="hiddenText"> Quản lý lương</span></span
           >
           <i class="bi bi-chevron-right hiddenText"></i>
         </a>
         <div id="collapse1" class="collapse">
           <ul>
-            <li>
+            <li  class="lever-2">
               <a href="/admin" class="d-flex gap-2"><i class="bi bi-patch-plus"></i><span class="hiddenText"> Nhập lương</span></a>
             </li>
-            <li>
+            <li class="lever-2">
                <a href="/outputsalary" class="d-flex gap-2"><i class="bi bi-patch-minus"></i><span class="hiddenText">Chi tiêu</span></a>
             </li>
-            <li><a href="" class="d-flex gap-2"><i class="bi bi-table"></i><span class="hiddenText" > báo cáo</span></a></li>
+            <li class="lever-2"><a href="/report" class="d-flex gap-2"><i class="bi bi-table"></i><span class="hiddenText" > báo cáo</span></a></li>
           </ul>
         </div>
       </li>
@@ -110,7 +113,7 @@
           </span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a
           href="/dashboad"
           class="d-flex justify-content-between toggle"
@@ -130,7 +133,7 @@
             <li><span class="hiddenText">3</span></li>
           </ul>
         </div>
-      </li>
+      </li> -->
       <li>
         <a href="/">
           <span class="d-flex gap-2">

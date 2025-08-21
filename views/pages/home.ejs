@@ -1,2 +1,308 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-<p>hello</p>
+  .content {
+    width: 100%;
+    height: 100vh;
+    /* background: #f2f2f2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #757575;
+    background: radial-gradient(
+      circle,
+      rgba(117, 117, 117, 1) 0%,
+      rgba(207, 207, 207, 1) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+    /* background-image:url(/images/background1.jpg) ;
+    background-repeat: no-repeat;
+    background-position: center; */
+  }
+
+  .cardItem {
+    height: 300px;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardItem1 {
+    position: relative;
+    background: #020024;
+    background: linear-gradient(
+      0deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 9, 121, 0.74) 6%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    z-index: 10;
+  }
+
+  .cardItem2 {
+    position: absolute;
+    background: #833ab4;
+    background: linear-gradient(
+      0deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 0.32) 87%,
+      rgba(252, 176, 69, 1) 100%
+    );
+    z-index: 5;
+    transform: translate(210px, -63px); /* dịch sang phải xuống dưới */
+  }
+
+  .cardItem3 {
+    position: absolute;
+    background: #eeaeca;
+    background: linear-gradient(
+      0deg,
+      rgba(238, 174, 202, 0.35) 0%,
+      rgba(148, 187, 233, 1) 100%
+    );
+    z-index: 6;
+    transform: translate(-160px, -110px); /* dịch sang trái xuống dưới */
+  }
+
+  .cardItem4 {
+    position: absolute;
+    width: 100%;
+    z-index: 6;
+    transform: translate(0px, -300px); /* dịch sang trái xuống dưới */
+  }
+
+  /* Responsive cho tablet */
+  @media (max-width: 992px) {
+    .cardItem {
+      width: 300px;
+      height: 200px;
+    }
+    .cardItem2 {
+      transform: translate(100px, 40px);
+    }
+    .cardItem3 {
+      transform: translate(-100px, 30px);
+    }
+  }
+
+  /* Responsive cho mobile */
+  @media (max-width: 576px) {
+    .cardItem {
+      width: 250px;
+      height: 180px;
+    }
+    .cardItem2 {
+      transform: translate(0, 210px); /* xuống dưới card chính */
+    }
+    .cardItem3 {
+      transform: translate(0, 420px); /* xuống dưới card2 */
+    }
+  }
+
+  /* @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap"); */
+
+  .cardItem4 svg {
+    font-family: "Russo One", sans-serif;
+    width: 100%;
+    height: 100%;
+  }
+  .cardItem4 svg text {
+    animation: stroke 7s infinite alternate;
+    stroke-width: 2;
+    stroke: #365fa0;
+    font-size: 60px;
+  }
+  @keyframes stroke {
+    0% {
+      fill: rgb(16, 69, 122);
+      stroke: rgba(54, 95, 160, 1);
+      stroke-dashoffset: 25%;
+      stroke-dasharray: 0 50%;
+      stroke-width: 2;
+    }
+    70% {
+      fill: rgba(72, 138, 204, 0.092);
+      stroke: rgba(54, 95, 160, 1);
+    }
+    80% {
+      fill: rgba(72, 138, 204, 0.185);
+      stroke: rgba(54, 95, 160, 1);
+      stroke-width: 3;
+    }
+    100% {
+      fill: rgb(16, 69, 122);
+      stroke: rgba(54, 95, 160, 0);
+      stroke-dashoffset: -25%;
+      stroke-dasharray: 50% 0;
+      stroke-width: 0;
+    }
+  }
+
+  .mySwiper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;
+  }
+  .swiper-slide {
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>
+
+<div class="content">
+  <div class="cardItem cardItem1 p-2" id="cardItem1">
+    <div class="swiper mySwiper" style="width: 100%; height: 100%">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/images/slide1.png" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/slide2.png" alt="" />
+        </div>
+        <div class="swiper-slide"><img src="/images/slide3.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+  <div class="cardItem cardItem2" id="cardItem2">
+    <div
+      id="chart"
+      style="width: 100% !important; height: 100% !important"
+    ></div>
+  </div>
+  <div class="cardItem cardItem3" id="cardItem3">
+    <div
+      id="chart"
+      style="width: 100% !important; height: 100% !important"
+    ></div>
+  </div>
+  <div class="cardItem4">
+    <div class="wrapper">
+      <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+          Hệ Thống Quản Lý Chi Tiêu
+        </text>
+      </svg>
+    </div>
+  </div>
+</div>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    autoplay: {
+      delay: 3000, // 2.5s đổi slide
+      disableOnInteraction: false, // vẫn chạy khi người dùng tương tác
+    },
+    loop: true,
+  });
+  var options3 = {
+    series: [
+      {
+        data: [44, 55, 41, 64, 22, 43, 21],
+      },
+      {
+        data: [53, 32, 33, 52, 13, 44, 32],
+      },
+    ],
+    chart: {
+      type: "bar",
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        dataLabels: {
+          position: "top",
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      offsetX: -6,
+      style: {
+        fontSize: "12px",
+        colors: ["#fff"],
+      },
+    },
+    stroke: {
+      show: true,
+      width: 1,
+      colors: ["#fff"],
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+    },
+    xaxis: {
+      categories: [2001, 2002, 2003, 2004, 2005, 2006, 2007],
+    },
+  };
+
+  var chart3 = new ApexCharts(
+    document.querySelector("#cardItem3 #chart"),
+    options3
+  );
+  chart3.render();
+
+  var options2 = {
+    series: [
+      {
+        name: "series1",
+        data: [31, 40, 28, 51, 42, 109, 100],
+      },
+      {
+        name: "series2",
+        data: [11, 32, 45, 32, 34, 52, 41],
+      },
+    ],
+    chart: {
+      height: "100%",
+      width: "100%",
+      type: "area",
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    stroke: {
+      curve: "smooth",
+    },
+    xaxis: {
+      type: "datetime",
+      categories: [
+        "2018-09-19T00:00:00.000Z",
+        "2018-09-19T01:30:00.000Z",
+        "2018-09-19T02:30:00.000Z",
+        "2018-09-19T03:30:00.000Z",
+        "2018-09-19T04:30:00.000Z",
+        "2018-09-19T05:30:00.000Z",
+        "2018-09-19T06:30:00.000Z",
+      ],
+    },
+    tooltip: {
+      x: {
+        format: "dd/MM/yy HH:mm",
+      },
+    },
+  };
+  var chart2 = new ApexCharts(
+    document.querySelector("#cardItem2 #chart"),
+    options2
+  );
+  chart2.render();
+</script>

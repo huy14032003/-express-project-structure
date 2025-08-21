@@ -1,68 +1,135 @@
 <link rel="stylesheet" href="css/output.css" />
 
-<div class="card mt-3  cardItem p-3">
-    <div class="card-title">
-        <h5 class="mb-0">Xuất chi tiêu tháng 8</h5>
-    </div>
-    <div class="card-body">
-  <form action="" id="myForm" class="mb-3">
-    <div class="row">
-      <div class="col-2">
-        <label for="" class="form-label">Họ tên</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="col-2">
-        <label for="" class="form-label">Ngày</label>
-        <input type="date" class="form-control" />
-      </div>
-      <div class="col-3">
-        <label for="" class="form-label">số tiền</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="col-2">
-        <label for="" class="form-label">Loại hình chi tiêu</label>
-       <select class="form-select" > 
+<div class="card mt-3 cardItem p-3 mx-4">
+  <div class="card-title">
+    <h5 class="mb-0">Xuất chi tiêu tháng 8</h5>
+  </div>
+  <div class="card-body">
+    <form action="" id="myForm" class="mb-3">
+      <label for="" class="form-label">Họ tên</label>
+      <input type="text" class="form-control" />
+
+      <div class="row">
+        <div class="col-4">
+          <label for="" class="form-label">Ngày</label>
+          <input type="date" class="form-control" />
+        </div>
+        <div class="col-4">
+          <label for="" class="form-label">Loại hình chi tiêu</label>
+          <select class="form-select">
             <option value="">Ăn</option>
             <option value="">đi</option>
             <option value="">chơi</option>
-        </select>
+          </select>
+        </div>
+        <div class="col-4">
+          <label for="" class="form-label">Chi tiết chi tiêu</label>
+          <select class="form-select">
+            <option value="">Ăn</option>
+            <option value="">đi</option>
+            <option value="">chơi</option>
+          </select>
+        </div>
       </div>
-      <div class="col-3">
-        <label for="" class="form-label">Ghi chú</label>
-          <input type="text" class="form-control" />
-       
+      <label for="" class="form-label">số tiền</label>
+      <input type="text" class="form-control" />
+      <label for="" class="form-label">Ghi chú</label>
+      <input type="text" class="form-control" />
+
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">
+        Submit
+      </button>
+    </form>
+    <div class="wrapper border rounded-3 p-3">
+      <div class="d-flex justify-content-end search">
+        <input
+          type="text"
+          class="form-control form-control-sm mb-2"
+          placeholder="search"
+          style="width: 150px"
+        />
       </div>
-      
+      <div class="table-responsive rounded overflow-hidden">
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <th>No.</th>
+            <th>No.</th>
+            <th>No.</th>
+            <th>No.</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
-    <button type="submit" class="mt-3 btn btn-dark" id="submit">Submit</button>
-  </form>
-  <table class="table table-responsive table-striped table-hover">
-    <thead>
-      <th>No.</th>
-      <th>No.</th>
-      <th>No.</th>
-      <th>No.</th>
-    </thead>
-    <tbody></tbody>
-  </table>
+  </div>
+</div>
+<div class="offcanvas offcanvas-end mt-5 pt-3" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Update</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form action="" id="myFormEdit" class="mb-3">
+      <label for="" class="form-label">Họ tên</label>
+      <input type="text" class="form-control" />
+
+ 
+      
+          <label for="" class="form-label">Ngày</label>
+          <input type="date" class="form-control" />
+       
+          <label for="" class="form-label">Loại hình chi tiêu</label>
+          <select class="form-select">
+            <option value="">Ăn</option>
+            <option value="">đi</option>
+            <option value="">chơi</option>
+          </select>
+        
+          <label for="" class="form-label">Chi tiết chi tiêu</label>
+          <select class="form-select">
+            <option value="">Ăn</option>
+            <option value="">đi</option>
+            <option value="">chơi</option>
+          </select>
+       
+      
+      <label for="" class="form-label">số tiền</label>
+      <input type="text" class="form-control" />
+      <label for="" class="form-label">Ghi chú</label>
+      <input type="text" class="form-control" />
+
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">
+        Submit
+      </button>
+    </form>
   </div>
 </div>
 <script>
   const tbody = document.querySelector("tbody");
-  for (let i = 0; i < 20; i++) {
-    const date = Math.floor(Math.random() * 100);
+  for (let i = 0; i < 10; i++) {
+    const date = Math.random() * 100;
     const tr = document.createElement("tr");
     tr.innerHTML = `
    <td>${date}</td>
    <td>${date}</td>
    <td>${date}</td>
-   <td>${date}</td>
+   <td><button class="btn btn-sm btn-warning" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Sửa</button></td>
    `;
 
     tbody.appendChild(tr);
   }
   const form = document.getElementById("myForm");
   form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Success!",
+      icon: "success",
+      text: "Bạn đã thêm thành công",
+      //   draggable: true
+    });
+  });
+  const formEdit = document.getElementById("myFormEdit");
+  formEdit.addEventListener("submit", (e) => {
     e.preventDefault();
     Swal.fire({
       title: "Success!",

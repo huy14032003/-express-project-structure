@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/admin.css" />
-<div class="card carItem mt-2">
+<div class="card carItem mt-2 mx-4">
   <div class="content px-4 py-3">
     <div class="title mb-2"><h5>Nhập Lương Tháng 8</h5></div>
     <div class="mb-3 d-flex justify-content-between row group1">
@@ -34,40 +34,125 @@
       <label for="">Ghi chú</label>
       <textarea name="" id="" placeholder="Nội dung ghi chú"></textarea>
     </div>
-      <div class="mb-3 submit">
-      <button class="btn btn-dark submit">submit</button>
+    <div class="device-salary border rounded-3 p-3 mb-3">
+      <div class="title mb-2 fw-bold">Chia lương</div>
+
+      <div id="groupContainer">
+        <div class="group-device mb-1">
+          <div class="header d-flex justify-content-between mb-1">
+            <span>Chia lương 1</span>
+            <i class="bi bi-trash3-fill delete-btn"></i>
+          </div>
+          <div class="row g-2">
+            <div class="col-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Số tiền"
+                disabled
+                readonly
+              />
+            </div>
+            <div class="col-2">
+              <select class="form-select">
+                <option value="">Ăn</option>
+                <option value="">Đi lại</option>
+                <option value="">Nhà cửa</option>
+              </select>
+            </div>
+            <div class="col-2">
+              <input type="text" class="form-control" placeholder="Chi tiết" />
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Chia phần trăm %"
+              />
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" placeholder="Ghi chú" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <i class="bi bi-plus-circle-fill" id="btnPlus"></i>
+      </div>
     </div>
-    <div class="col-12  table">
-      <table class="table-responsive ">
-        <thead>
-    <tr>
-      <th>NO.</th>
-      <th>Ngày nhập</th>
-      <th>Số tiền</th>
-      <th>Ngân hàng</th>
-      <th>Ghi chú</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-      </table>
+
+    <div class="mb-3 submit">
+      <button class="btn btn-dark" id="btnsubmit">submit</button>
     </div>
-  
+    <div class="col-12 table">
+      <div class="wrapper border rounded-3 p-3">
+        <div class="d-flex justify-content-end search mb-2">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="Search"
+            style="width: 150px"
+          />
+        </div>
+        <div class="table-responsive rounded-3">
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th>NO.</th>
+                <th>Ngày nhập</th>
+                <th>Số tiền</th>
+                <th>Ngân hàng</th>
+                <th>Ghi chú</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<div class="offcanvas offcanvas-end mt-5 pt-3" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Update</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <form action="" id="myFormEdit" class="mb-3">
+      <label for="" class="form-label">Họ tên</label>
+      <input type="text" class="form-control" />
 
+ 
+      
+          <label for="" class="form-label">Ngày</label>
+          <input type="date" class="form-control" />
+       
+          <label for="" class="form-label">Loại hình chi tiêu</label>
+          <select class="form-select">
+            <option value="">Ăn</option>
+            <option value="">đi</option>
+            <option value="">chơi</option>
+          </select>
+        
+          <label for="" class="form-label">Chi tiết chi tiêu</label>
+          <select class="form-select">
+            <option value="">Ăn</option>
+            <option value="">đi</option>
+            <option value="">chơi</option>
+          </select>
+       
+      
+      <label for="" class="form-label">số tiền</label>
+      <input type="text" class="form-control" />
+      <label for="" class="form-label">Ghi chú</label>
+      <input type="text" class="form-control" />
+
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
 <script src="/js/inputsalary.js"></script>
-<script>
-const tbody=document.querySelector('tbody')
-  for (let i = 0; i < 20; i++) {
-    const date =Math.floor(Math.random()*100);
-    const row = `<tr>
-      <td>${date}</td>
-      <td>${date}</td>
-      <td>${date}</td>
-      <td>${date}</td>
-      <td>${date}</td>
-    </tr>`;
-    
-    tbody.innerHTML += row;
-  }
-</script>
+<script></script>

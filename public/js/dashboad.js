@@ -31,7 +31,9 @@ var options = {
   title: {
     text: "XYZ - Stock Analysis (2009 - 2016)",
     align: "left",
-   
+    style:{
+fontSize: '16px'
+    }
   },
   xaxis: {
     categories: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016],
@@ -147,7 +149,7 @@ var optionDonut = {
   title: {
     text: 'Department Sales',
     style: {
-      fontSize: '18px'
+      fontSize: '16px'
     }
   },
   series: [21, 23, 19, 14, 6],
@@ -168,34 +170,3 @@ const ui = {
     return document.querySelector("th");
   },
 };
-function renderThead() {
-  const thead = document.querySelector("thead");
-  const a = [];
-  for (let i = 0; i < 6; i++) {
-    a.push("name" + [i]);
-  }
-  a.forEach((item) => {
-    const th = document.createElement("th");
-    th.innerHTML = `
-    ${item}
-    `;
-    thead.appendChild(th);
-  });
-}
-renderThead();
-function renderTbody() {
-  const tbody = document.querySelector("tbody");
-  for (let i = 0; i < 20; i++) {
-    const tr = document.createElement("tr");
-    for (let j = 0; j < 6; j++) {
-      const td = document.createElement("td");
-      td.textContent = Math.random();
-      tr.appendChild(td);
-    }
-    tbody.appendChild(tr);
-  }
-}
-
-
-
-renderTbody();

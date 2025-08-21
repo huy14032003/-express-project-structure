@@ -34,6 +34,9 @@ app.get('/dashboad', (req, res) => {
 app.get('/outputsalary', (req, res) => {
   res.render('pages/outputsalary', { title: 'Trang chủ' });
 });
+app.get('/report', (req, res) => {
+  res.render('pages/report', { title: 'Trang chủ' });
+});
 app.use('/api/auth', authRoutes);
 
 app.listen(PORT, () => {

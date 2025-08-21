@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/css/report.css" />
+<div class="card cardItem p-3 mt-3 mb-3 mx-4">
+  <div class="card-title">
+    <h5>Báo cáo chi tiêu tháng 8</h5>
+  </div>
+  <div class="card-body p-0">
+    <div class="d-flex justify-content-start mb-3">
+        <button class="btn btn-secondary">Export to excel</button>
+    </div>
+    <div class="warpper border rounded-3 p-3">
+      <div class="d-flex justify-content-end search">
+        <input
+          type="text"
+          class="form-control form-control-sm mb-2"
+          placeholder="search"
+          style="width: 150px"
+        />
+      </div>
+      <div class="table-responsive rounded-3">
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <th>NO.</th>
+            <th>NO.</th>
+            <th>NO.</th>
+            <th>NO.</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const tbody = document.querySelector("tbody");
+  for (let i = 0; i < 10; i++) {
+    const tr = document.createElement("tr");
+    const num = Math.random() * 100;
+    tr.innerHTML = `
+    <td>${num}</td>
+    <td>${num}</td>
+    <td>${num}</td>
+    <td>${num}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+</script>
