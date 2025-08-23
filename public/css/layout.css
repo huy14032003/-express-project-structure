@@ -1,0 +1,161 @@
+:root {
+  --header-top-height: 4rem;
+  --aside-left-width: 15.5rem;
+  --aside-left-width-collapsed: 4.5rem;
+  --aside-logo-height: 3rem;
+  --aside-img-size: 2.5rem;
+  --aside-link-height: 2.5rem;
+}
+
+.app_aside-left a,
+.app_aside-left i {
+  text-decoration: none;
+  font-size: 16px;
+  color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.app_aside-left span {
+  transition: all 0.3s ease-in-out;
+}
+.app_aside-left span:hover,
+.app_aside-left a:hover,
+.siapp_aside-leftdebar ul li a span:hover {
+  color: #777777;
+}
+.app_aside-left ul {
+  list-style: none;
+  text-wrap: nowrap;
+  padding: 0 20px;
+}
+.app_aside-left ul li {
+  padding-top: 18px;
+}
+
+
+.bi-chevron-right.rotate {
+  transform: rotate(90deg);
+  transition: all 0.3s ease-in-out;
+}
+.lever-2 a,
+.lever-2 i {
+  color: #adadad !important;
+}
+#sideBar {
+  margin-bottom: 24px;
+}
+#sideBar.collapsed {
+  display: none;
+
+}
+.app_aside-left--size {
+  width: var(--aside-left-width);
+  /* transition: all 0.3s ease; */
+}
+.app_header
+{
+    background-color: #dddcdc3b;
+    transition: all 0.3s ease;
+}
+.app_main--size.collapsed
+{
+    padding-left: var(--aside-left-width-collapsed);
+    transition: all 0.3s ease;
+}
+.app_main--size {
+  padding-left: var(--aside-left-width);
+  padding-top: var(--header-top-height) ;
+  background-color: #85919a2a;
+  transition: all 0.3s ease;
+}
+.app_header--size {
+  height: var(--header-top-height);
+  padding-left: var(--aside-left-width);
+  transition: all 0.3s ease;
+}
+#sideBar.collapsed .hiddenText
+{
+    display: none;
+    transition: all 0.3s ease;
+}
+#navBar.collapsed {
+  padding-left: var(--aside-left-width-collapsed);
+  transition: all 0.3s ease;
+}
+#sideBar.collapsed {
+  display: block;
+  width: var(--aside-left-width-collapsed);
+  padding-bottom: 1.5rem !important;
+  padding-top: 1.5rem !important;
+  padding-right: 0.5rem !important;
+  padding-left: 0.5rem !important;
+  transition: all 0.3s ease;
+}
+#sideBar.collapsed ul>li>span{
+    font-size: 25px;
+    transition: all 0.3s ease;
+}
+.app_header--blur {
+  backdrop-filter: blur(10px);
+}
+.search
+{
+    position: relative;
+}
+.search i
+{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    
+}
+ul>li>span{
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+ul>li
+{
+    padding: 5px 0;
+}
+ul>li:hover
+{
+    background-color: #dbdbdb58;
+}
+#btnDarkMode.darkMode,body.darkMode button
+{
+    background-color: #4f4f4f !important;
+    color: #e9e9e9 !important;
+}
+body.darkMode #sideBar,body.darkMode ,body.darkMode .card,body.darkMode input,body.darkMode table,body.darkMode select,body.darkMode textarea,body.darkMode input::placeholder
+{
+     background-color:#2f2f2f !important;
+        color: #e9e9e9 !important;
+}
+.form{
+    position: relative;
+   padding: 20px 5px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+.box-multi{
+    position: absolute;
+   top: 65px;
+   right: 0;
+    z-index: 10;
+    background-color: #f8f8f8c5;
+   
+    width: 120px;
+     backdrop-filter: blur(10px);
+     transition: all 0.3s ease;
+}
+.box-multi ul li
+{
+    padding-left: 7px;
+    cursor: pointer;
+}
+.form:hover 
+{
+    background-color: #f8f8f8c5 ;
+}

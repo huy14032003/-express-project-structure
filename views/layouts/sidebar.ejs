@@ -1,44 +1,9 @@
-<style>
-  .sidebar a,
-  .sidebar i {
-    text-decoration: none;
-    font-size: 16px;
-    color: #000;
-    transition: all 0.3s ease-in-out;
-  }
-
-  .sidebar span {
-    transition: all 0.3s ease-in-out;
-  }
-  .sidebar span:hover,
-  .sidebar a:hover,
-  .sidebar ul li a span:hover {
-    color: #777777;
-  }
-  .sidebar ul {
-    list-style: none;
-    text-wrap: nowrap;
-    padding: 0 20px;
-  }
-  .sidebar ul li {
-    padding-top: 18px;
-  }
-  .logo {
-    padding-top: 13px;
-  }
-
-  .bi-chevron-right.rotate {
-    transform: rotate(90deg);
-    transition: all 0.3s ease-in-out;
-  }
-.lever-2 a,.lever-2 i
-{
-  color: #adadad !important;
-}
-</style>
-<div class="sidebar">
+<aside
+  id="sideBar"
+  class="app_aside-left--size fixed-top bg-white min-vh-100 px-2 py-4 gap-3 flex-column overflow-hidden"
+>
   <div
-    class="logo link text-center d-flex gap-2 justify-content-center align-items-center flex-column"
+    class="logo link text-center d-flex gap-2 justify-content-center align-items-center flex-column mb-4"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -67,82 +32,68 @@
       </g>
     </svg>
 
-    <span class="hiddenText">Quản lý tài chính</span>
+    <span class="hiddenText fw-bold">Quản lý tài chính</span>
   </div>
   <div class="link">
-    <ul class="item">
-      <li>
-        <a href="/home">
-          <span class="d-flex gap-2"
-            ><i class="bi bi-house-door"></i
-            ><span class="hiddenText"> Home</span>
-          </span>
-        </a>
+    <ul class="item list-unstyled flex-grow-1 d-flex flex-column gap-3">
+      <li onclick="location.href='/home'" class="ps-3 rounded d-flex align-items-center gap-3">
+        <span class="d-flex gap-2"
+          ><i class="bi bi-house-door"></i><span class="hiddenText"> Home</span>
+        </span>
       </li>
 
-      <li>
-        <a
-          href=""
-          class="d-flex justify-content-between toggle"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapse1"
+      <li
+        class="toggle ps-3 "
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse1"
+      >
+        <span class="d-flex gap-2"
+          ><i class="bi bi-cash-coin"></i>
+          <span class="hiddenText"> Quản lý lương</span></span
         >
-          <span class="d-flex gap-2"
-            ><i class="bi bi-cash-coin"></i>
-            <span class="hiddenText"> Quản lý lương</span></span
-          >
-          <i class="bi bi-chevron-right hiddenText"></i>
-        </a>
+
         <div id="collapse1" class="collapse">
-          <ul>
-            <li  class="lever-2">
-              <a href="/admin" class="d-flex gap-2"><i class="bi bi-patch-plus"></i><span class="hiddenText"> Nhập lương</span></a>
+          <ul class="list-unstyled flex-grow-1 d-flex flex-column ps-0 mt-2">
+            <li onclick="location.href='/admin'" class="lever-2" >
+              <span>
+                 <i class="bi bi-patch-plus"></i >
+                 <span class="hiddenText"> Nhập lương</span>
+              </span>
+             
             </li>
-            <li class="lever-2">
-               <a href="/outputsalary" class="d-flex gap-2"><i class="bi bi-patch-minus"></i><span class="hiddenText">Chi tiêu</span></a>
+            <li class="lever-2"  onclick="location.href='/outputsalary'" >
+              <span>
+                <i class="bi bi-patch-minus"></i >
+                <span class="hiddenText"> Chi tiêu</span>
+              </span>
+            
             </li>
-            <li class="lever-2"><a href="/report" class="d-flex gap-2"><i class="bi bi-table"></i><span class="hiddenText" > báo cáo</span></a></li>
+            <li onclick="location.href='/report'" class="lever-2 ">
+              <span>
+                <i class="bi bi-table"></i>
+                <span class="hiddenText"> Báo cáo</span>
+              </span>
+            </li>
           </ul>
         </div>
       </li>
-      <li>
-        <a href="/dashboad">
+      <li class=" ps-3 rounded d-flex align-items-center gap-3" onclick="location.href='/dashboad'">
+       
           <span class="d-flex gap-2"
             ><i class="bi bi-graph-up-arrow"></i>
             <span class="hiddenText"> Dashboad</span>
           </span>
-        </a>
+       
       </li>
-      <!-- <li>
-        <a
-          href="/dashboad"
-          class="d-flex justify-content-between toggle"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapse3"
-        >
-          <span class="d-flex gap-2"
-            ><i class="bi bi-graph-up-arrow"></i>
-            <span class="hiddenText"> Dashboad</span></span
-          >
-          <i class="bi bi-chevron-right hiddenText"></i>
-        </a>
-        <div id="collapse3" class="collapse">
-          <ul>
-            <li><span class="hiddenText">1</span></li>
-            <li><span class="hiddenText">2</span></li>
-            <li><span class="hiddenText">3</span></li>
-          </ul>
-        </div>
-      </li> -->
-      <li>
-        <a href="/">
+
+      <li type="button" id="appAsideLogout" class="app_aside-link--size app_aside-link--animation app_aside-link--hover ps-3 rounded d-flex align-items-center gap-3">
           <span class="d-flex gap-2">
             <i class="bi bi-box-arrow-left"></i>
             <span class="hiddenText"> Logout</span>
           </span>
-        </a>
+       
       </li>
     </ul>
   </div>
-</div>
+</aside>
 <script></script>

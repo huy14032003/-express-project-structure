@@ -1,120 +1,23 @@
 <%- include('./header') %>
-
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .wrapper-container {
-    display: grid;
-    grid-template-areas:
-      "side nav"
-      "side main";
-    grid-template-rows: 70px 1fr;
-    grid-template-columns: 80px 1fr;
-    height: 100vh;
-    transition: all 0.5s ease;
-    position: relative;
-    flex: 1;
-  }
-
-
-.wrapper-container:not(.open) 
-{
-  grid-template-columns: 240px 1fr;
-  transition: all 0.5s ease;
-}
-  .navbar {
-    grid-area: nav;
-    background-color: rgb(56, 65, 74);
-    color: rgb(176, 180, 184);
-    padding: 0 20px;
-    z-index: 10;
-    position: relative; 
-  }
-
-  .main {
-    grid-area: main;
-    background-color: rgb(245, 246, 247);
-    overflow-y: auto;
-    z-index: 1;
-  }
-
-  .sidebar {
-    grid-area: side;
-    background-color: #fff;
-    overflow: hidden;
-    width: 80px;
-    position: relative;
-    transition: all 0.5s ease;
-    z-index: 10;
-  }
- 
-  .wrapper-container.collsapsed.sidebar {
-    width: 240px;
-    position: absolute;
-    z-index: 20;
-  }
-  /* Khi sidebar mở rộng hoàn toàn */
-  .wrapper-container:not(.collsapsed) .sidebar {
-    transition: all 0.5s ease;
-    width: 240px;
-    position: relative;
-  }
-
-  /* Khi chỉ hover mở rộng */
-
-
-  /* Hidden text mặc định */
-  .sidebar .hiddenText {
-    opacity: 0;
-    width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    transition: all 0.5s ease;
-  }
-
-  /* Khi mở rộng thì hiện chữ */
-
-  .wrapper-container:not(.collsapsed) .sidebar .hiddenText {
-    opacity: 1;
-    width: auto;
-  }
-
-  /* Giao diện khi sidebar thu gọn */
-
-  .wrapper-container.collsapsed .sidebar .link {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center !important;
-    
-  }
-  .sidebar ul
-  {
-  transition: all 0.5s ease-in-out;  
-  }
-.wrapper-container.collsapsed .sidebar ul
-{
-  padding: 0;
-  transition: all 0.5s ease-in-out;
-}
-  .wrapper-container.collsapsed .sidebar .item {
-    padding: 0;
-  }
-/* .wrapper-container.open .sidebar i,  */
-  .wrapper-container.collsapsed .sidebar i {
-    font-size: 25px;
-  }
-</style>
-
+<link rel="stylesheet" href="/css/layout.css">
 <div class="wrapper-container collsapsed open">
   <%- include('./navbar') %>
   <%- include('./sidebar') %>
-  <div class="main"><%- body %></div>
+  <main id="app_main" class="app_main--size"><%- body %></main>
 </div>
 
 <script src="/js/layout.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+  Sidebar.init({
+    menuIcon:'#btnMenu',
+    sideBar:'#sideBar',
+    navBar:'#navBar',
+    app_main:"#app_main",
+    btnDarkMode:'#btnDarkMode',
+    groupMultiLang:'#groupMultiLang',
+    multiBox:'#multiBox'
+  })
+  
+})
+</script>
