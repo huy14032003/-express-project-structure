@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Client Test</title>
+  <script src="applib.js"></script>
+</head>
+<body>
+  <h1>Test ApiClient</h1>
+
+  <button onclick="testGet()">GET (with params)</button>
+  <button onclick="testPost()">POST (with JSON body)</button>
+  <button onclick="testPut()">PUT</button>
+  <button onclick="testDelete()">DELETE</button>
+  <button onclick="testFormData()">POST FormData</button>
+  <button onclick="testTimeout()">Timeout (3s)</button>
+  <button onclick="testNoCache()">GET NoCache</button>
+  <button onclick="testLoginToken()">testLoginToken</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    const api = new AppLib.ApiClient("https://dummyjson.com", {
+      cache: true,
+      timeout: 10000,
+    });
+    function log(data) {
+      document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    }
+    
+  function testLoginToken() {
+  api.post(
+    "auth/login",
+    {
+      username: "kminchelle",
+      password: "0lelplR"
+    },
+    {
+      noCache: true
+    }
+  ).then(log).catch(log);
+}
+    function testGet() {
+      api.get("products", {
+        params: { limit: 3 },
+        noCache:false
+      }).then(log).catch(log);
+    }
+
+    function testPost() {
+      api.post("products/add", {
+         
+          title: "New Product",
+          price: 99
+        
+      }).then(log).catch(log);
+    }
+
+    function testPut() {
+      api.put("products/1", {
+       
+          title: "Updated Product"
+        
+      }).then(log).catch(log);
+    }
+
+    function testDelete() {
+      api.delete("products/1").then(log).catch(log);
+    }
+
+    function testFormData() {
+      const form = new FormData();
+      form.append("title", "Form Product");
+      form.append("price", 50);
+      api.post("products/add", form).then(log).catch(log);
+    }
+
+    function testTimeout() {
+      api.get("products", {
+        timeout: 3000
+      }).then(log).catch(log);
+    }
+
+    function testNoCache() {
+      api.get("products", {
+        noCache: false
+      }).then(log).catch(log);
+    }
+  </script>
+</body>
+</html>

@@ -30,7 +30,6 @@ exports.login = (req, res) => {
 
     const valid = bcrypt.compareSync(password, user.password);
     if (!valid) return res.status(401).json({ message: 'Sai mật khẩu' });
-
     const token = jwt.sign(
       { id: user.id, role: user.role },
       process.env.JWT_SECRET,
@@ -41,7 +40,7 @@ exports.login = (req, res) => {
       token,
       user: {
         id: user.id,
-        name: user.name,          // Trả thêm name
+        name: user.name,         
         username: user.username,
         role: user.role
       }

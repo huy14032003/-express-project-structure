@@ -1,40 +1,28 @@
 <%- include('../layouts/header') %>
-<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
 <title>Register</title>
 
-<body class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center ">
   <div class="wrapper d-flex">
     <div class="d-flex align-items-center" style="margin-left: 10%">
       <div class="content-hello text-center">
         <p style="font-weight: 800; font-size: 30px">I LOVE YOUUU !</p>
         <p style="font-size: 20px">
-          Hope you have a good experience with my products, wish you a good
-          day.<i class="bi bi-balloon-heart-fill"></i>
+          Hope you have a good experience with my products, wish you a good day.
+          <i class="bi bi-balloon-heart-fill"></i>
         </p>
       </div>
     </div>
 
     <div class="wrapper-content active d-flex justify-content-center">
-      <form
-        action=""
-        id="register"
-        class="d-flex justify-content-center align-items-center"
-      >
+      <form action="" id="register" class="d-flex justify-content-center align-items-center">
         <div class="container-form container-form-register">
           <div class="title text-center mb-2"><span>Đăng ký</span></div>
           <div class="username">
             <div class="form-group email">
               <div class="wrapper-form">
+                <input type="text" name="email" id="email" placeholder="Email" required data-rule="isRequired,isEmail" />
 
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  required
-                  data-rule="isRequired,isEmail"
-                />
-  
                 <i class="bi bi-envelope-fill"></i>
               </div>
               <span class="warning error-message warning-email"></span>
@@ -42,14 +30,7 @@
 
             <div class="form-group user">
               <div class="wrapper-form">
-
-                <input
-                  type="text"
-                  name="user"
-                  id="user"
-                  placeholder="Username"
-                  data-rule="isRequired,minLength:1"
-                />
+                <input type="text" name="user" id="user" placeholder="Username" data-rule="isRequired,minLength:1" />
 
                 <i class="bi bi-person-fill"></i>
               </div>
@@ -58,15 +39,8 @@
 
             <div class="form-group pass">
               <div class="wrapper-form">
+                <input type="password" name="pass" id="pass" placeholder="Password" data-rule="isRequired,minLength:1" />
 
-                <input
-                  type="password"
-                  name="pass"
-                  id="pass"
-                  placeholder="Password"
-                  data-rule="isRequired,minLength:1"
-                />
-  
                 <i class="bi bi-lock-fill"></i>
               </div>
               <span class="warning error-message warning-pass"></span>
@@ -74,32 +48,21 @@
           </div>
 
           <div class="action">
-            <button type="submit">Đăng ký</button>
+            <button type="submit" id="btnRegister">Đăng ký</button>
             <p class="text-center mt-3">
-              Đã có tài khoản? <span class="moveSignIn">Đăng nhập</span>
+              Đã có tài khoản?
+              <span class="moveSignIn">Đăng nhập</span>
             </p>
           </div>
         </div>
       </form>
-      <form
-        action=""
-        id="login"
-        class="d-flex justify-content-center align-items-center"
-       
-      >
+      <form action="" id="login" class="d-flex justify-content-center align-items-center">
         <div class="container-form container-form-login">
           <div class="mb-4 title text-center"><span>Đăng nhập</span></div>
           <div class="form-group">
             <div class="wrapper-form">
+              <input type="text" name="username" id="userLogin" placeholder="Username" data-rule="isRequired" />
 
-              <input
-                type="text"
-                name="username"
-                id="userLogin"
-                placeholder="Username"
-                data-rule="isRequired"
-              />
-  
               <i class="bi bi-person-fill"></i>
             </div>
             <span class="warning error-message"></span>
@@ -107,22 +70,13 @@
 
           <div class="form-group">
             <div class="wrapper-form">
-              <input
-                type="password"
-                id="passLogin"
-                placeholder="Password"
-                data-rule="isRequired"
-                name="password"
-              />
+              <input type="password" id="passLogin" placeholder="Password" data-rule="isRequired" name="password" />
               <i class="bi bi-lock-fill"></i>
             </div>
             <span class="warning error-message"></span>
           </div>
 
-          <div
-            class="d-flex justify-content-between align-items-center"
-            style="font-size: 12px"
-          >
+          <div class="d-flex justify-content-between align-items-center" style="font-size: 12px">
             <div class="d-flex justify-content-center align-items-center">
               <input type="checkbox" name="remind" id="remind" />
               <label for="remind">Show password</label>
@@ -130,22 +84,23 @@
             <div class=""><a href="">Forgot password ?</a></div>
           </div>
           <div class="action">
-            <button type="submit">Đăng nhập</button>
+            <button type="submit" id="btnLogin">Đăng nhập</button>
             <p class="text-center mt-3">
-              Chưa có tài khoản? <span class="moveSignUp">Đăng Ký</span>
+              Chưa có tài khoản?
+              <span class="moveSignUp">Đăng Ký</span>
             </p>
           </div>
         </div>
       </form>
     </div>
-  </div>
-  <div class="popup">
-    <div class="popup-content"></div>
-  </div>
+
+</div>
   <!-- Script xử lý -->
-  <script src="../libs/js/applib.js"></script>
-  <script src="../js/register.js"></script>
-  <!-- <script src="../js/login.js"></script> -->
+
+  <script type="module" src="/assets/js/register.js">
+    
+
+  </script>
   <script>
     const moveSignUp = document.querySelector(".moveSignUp");
     const moveSignIn = document.querySelector(".moveSignIn");
@@ -165,19 +120,13 @@
     // Sự kiện chuyển sang Đăng nhập
     moveSignIn?.addEventListener("click", () => {
       wrapperContent?.classList.add("active");
-      updateContent(
-        "I LOVE YOUUU !",
-        "Hope you have a good experience with my products, wish you a good day."
-      );
+      updateContent("I LOVE YOUUU !", "Hope you have a good experience with my products, wish you a good day.");
     });
 
     // Sự kiện chuyển sang Đăng ký
     moveSignUp?.addEventListener("click", () => {
       wrapperContent?.classList.remove("active");
-      updateContent(
-        "Welcome to me !",
-        "If you already have an account, click log in."
-      );
+      updateContent("Welcome to me !", "If you already have an account, click log in.");
     });
   </script>
-</body>
+

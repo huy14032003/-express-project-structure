@@ -1,23 +1,13 @@
 <%- include('./header') %>
-<link rel="stylesheet" href="/css/layout.css">
-<div class="wrapper-container collsapsed open">
+<link rel="stylesheet" href="/assets/css/layout.css">
+
   <%- include('./navbar') %>
   <%- include('./sidebar') %>
-  <main id="app_main" class="app_main--size"><%- body %></main>
+      <main class="card app_main--size" id="appMain" >
+        <%- body %>
+      </main>
+ 
 </div>
 
-<script src="/js/layout.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  Sidebar.init({
-    menuIcon:'#btnMenu',
-    sideBar:'#sideBar',
-    navBar:'#navBar',
-    app_main:"#app_main",
-    btnDarkMode:'#btnDarkMode',
-    groupMultiLang:'#groupMultiLang',
-    multiBox:'#multiBox'
-  })
-  
-})
-</script>
+<!-- <script type="module" src="/assets/js/layout.js"></script> -->
+<script type="module" src="/assets/js/layout.js"></script>

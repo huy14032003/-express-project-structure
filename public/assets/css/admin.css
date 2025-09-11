@@ -1,0 +1,46 @@
+.inputNote textarea
+{
+    resize: none;
+    width: 100%;
+    height: 50px;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #c5c5c5bd;
+}
+input:focus,.inputNote textarea:focus
+{
+    border: 1px solid #587182 !important;
+    box-shadow: none !important;
+    outline: none;
+}
+.wrapper-table
+{
+    min-width: 700px;
+    overflow: auto;
+}
+table th
+{
+    background-color: #dfdfdf !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 30px;
+  
+}
+table tbody tr:nth-child(even)
+{
+    background-color: #e2e8eb !important;
+}
+.device-salary{
+    max-height: 350px;
+   
+    overflow: auto;
+}
+ .scroll-container {
+
+    overflow-x: auto;         /* Bật scroll ngang */
+    -webkit-overflow-scrolling: touch; /* Kéo mượt trên iOS */
+  }
+
+  .wrapper-table {
+    min-width: 700px;         /* Ép chiều rộng tối thiểu */
+  }

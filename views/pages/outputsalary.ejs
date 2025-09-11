@@ -1,6 +1,9 @@
-<link rel="stylesheet" href="css/output.css" />
-<div class="back  mt-3 mx-4">
-  <button onclick="location.href='/home'" class="btn  bg-white fs-6 "><i class="bi bi-box-arrow-in-left"></i> Quay về</button>
+<link rel="stylesheet" href="/assets/css/output.css" />
+<div class="back mx-4">
+  <button onclick="location.href='/home'" class="btn bg-white fs-6">
+    <i class="bi bi-box-arrow-in-left"></i>
+    Quay về
+  </button>
 </div>
 <div class="card border-0 shadow-sm mt-3 cardItem p-3 mx-4 mt-3">
   <div class="card-title">
@@ -12,11 +15,11 @@
       <input type="text" class="form-control" />
 
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <label for="" class="form-label">Ngày</label>
           <input type="date" class="form-control" />
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <label for="" class="form-label">Loại hình chi tiêu</label>
           <select class="form-select">
             <option value="">Ăn</option>
@@ -24,7 +27,7 @@
             <option value="">chơi</option>
           </select>
         </div>
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <label for="" class="form-label">Chi tiết chi tiêu</label>
           <select class="form-select">
             <option value="">Ăn</option>
@@ -33,34 +36,33 @@
           </select>
         </div>
       </div>
-      <label for="" class="form-label">số tiền</label>
+      <label for="" class="form-label">số tiền gốc</label>
+      <input type="text" class="form-control" disabled />
+      <label for="" class="form-label">số tiền chi tiêu</label>
       <input type="text" class="form-control" />
       <label for="" class="form-label">Ghi chú</label>
       <input type="text" class="form-control" />
 
-      <button type="submit" class="mt-3 btn btn-dark" id="submit">
-        Submit
-      </button>
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">Submit</button>
     </form>
-    <div class="wrapper border rounded-3 p-3">
-      <div class="d-flex justify-content-end search">
-        <input
-          type="text"
-          class="form-control form-control-sm mb-2"
-          placeholder="search"
-          style="width: 150px"
-        />
-      </div>
-      <div class="table-responsive rounded overflow-hidden">
-        <table class="table table-bordered table-striped table-hover">
-          <thead>
-            <th>No.</th>
-            <th>No.</th>
-            <th>No.</th>
-            <th>No.</th>
-          </thead>
-          <tbody></tbody>
-        </table>
+    <div class="col-12 col-md-12">
+      <div class="wrapper-container">
+        <div class="wrapper border rounded-3 p-3">
+          <div class="d-flex justify-content-end search">
+            <input type="text" class="form-control form-control-sm mb-2" placeholder="search" />
+          </div>
+          <div class="table-responsive rounded overflow-hidden">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <th>No.</th>
+                <th>No.</th>
+                <th>No.</th>
+                <th>No.</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -75,34 +77,29 @@
       <label for="" class="form-label">Họ tên</label>
       <input type="text" class="form-control" />
 
- 
-      
-          <label for="" class="form-label">Ngày</label>
-          <input type="date" class="form-control" />
-       
-          <label for="" class="form-label">Loại hình chi tiêu</label>
-          <select class="form-select">
-            <option value="">Ăn</option>
-            <option value="">đi</option>
-            <option value="">chơi</option>
-          </select>
-        
-          <label for="" class="form-label">Chi tiết chi tiêu</label>
-          <select class="form-select">
-            <option value="">Ăn</option>
-            <option value="">đi</option>
-            <option value="">chơi</option>
-          </select>
-       
-      
+      <label for="" class="form-label">Ngày</label>
+      <input type="date" class="form-control" />
+
+      <label for="" class="form-label">Loại hình chi tiêu</label>
+      <select class="form-select">
+        <option value="">Ăn</option>
+        <option value="">đi</option>
+        <option value="">chơi</option>
+      </select>
+
+      <label for="" class="form-label">Chi tiết chi tiêu</label>
+      <select class="form-select">
+        <option value="">Ăn</option>
+        <option value="">đi</option>
+        <option value="">chơi</option>
+      </select>
+
       <label for="" class="form-label">số tiền</label>
       <input type="text" class="form-control" />
       <label for="" class="form-label">Ghi chú</label>
       <input type="text" class="form-control" />
 
-      <button type="submit" class="mt-3 btn btn-dark" id="submit">
-        Submit
-      </button>
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">Submit</button>
     </form>
   </div>
 </div>

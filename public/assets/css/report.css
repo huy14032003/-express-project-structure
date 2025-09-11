@@ -1,0 +1,17 @@
+
+table th
+{
+    background-color: #dfdfdf !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 30px;
+}
+.wrapper-container
+{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.warpper
+{
+    min-width: 700px;
+}

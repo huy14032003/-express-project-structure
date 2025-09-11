@@ -1,116 +1,98 @@
-<link rel="stylesheet" href="/css/admin.css" />
-<div class="back  mt-3 mx-4">
-  <button class="btn  bg-white fs-6 "><i class="bi bi-box-arrow-in-left"></i> Quay về</button>
+<link rel="stylesheet" href="/assets/css/admin.css" />
+<div class="back mx-4">
+  <button class="btn bg-white fs-6">
+    <i class="bi bi-box-arrow-in-left"></i>
+    Quay về
+  </button>
 </div>
-<div class="card carItem border-0 shadow-sm mt-3 mx-4 ">
+<div class="card carItem border-0 shadow-sm mt-3 mx-4">
   <div class="content px-4 py-3">
     <div class="title mb-2"><h5>Nhập Lương Tháng 8</h5></div>
-    <div class="mb-3 d-flex justify-content-between row group1">
-      <div class="inputName col-xl-4">
-        <label for="">Họ tên người nhập</label>
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Ex:Trần Quang Huy"
-        />
+    <form id="form1" action="">
+      <div class="mb-3 d-flex justify-content-between row group1">
+        <div class="inputName col-xl-4">
+          <label for="">Họ tên người nhập</label>
+          <input type="text" class="form-control" name="username" placeholder="Ex:Trần Quang Huy" />
+        </div>
+        <div class="inputDate col-xl-2">
+          <label for="">Ngày nhập lương</label>
+          <input type="date" name="date" class="form-control" />
+        </div>
+        <div class="inputSalary col-xl-3">
+          <label for="">Số tiền lương</label>
+          <input type="text" name="amoutSalary" class="form-control only-number currency-input" name="" id="amoutSalary" placeholder="Ex:9.500.000"  />
+        </div>
+        <div class="inputBank col-xl-3">
+          <label for="">Ngân hàng nhận</label>
+          <input type="text" name="bank" class="form-control" placeholder="Ex:Vietcombank" />
+        </div>
       </div>
-      <div class="inputDate col-xl-2">
-        <label for="">Ngày nhập lương</label>
-        <input type="date" class="form-control" />
+      <div class="inputNote gap-3 mb-3 col-xl-12">
+        <label for="">Ghi chú</label>
+        <textarea name="note" id="" placeholder="Nội dung ghi chú"></textarea>
       </div>
-      <div class="inputSalary col-xl-3">
-        <label for="">Số tiền lương</label>
-        <input
-          type="text"
-          class="form-control"
-          name=""
-          id=""
-          placeholder="Ex:9.500.000"
-        />
-      </div>
-      <div class="inputBank col-xl-3">
-        <label for="">Ngân hàng nhận</label>
-        <input type="text" class="form-control" placeholder="Ex:Vietcombank" />
-      </div>
-    </div>
-    <div class="inputNote gap-3 mb-3 col-xl-12">
-      <label for="">Ghi chú</label>
-      <textarea name="" id="" placeholder="Nội dung ghi chú"></textarea>
-    </div>
-    <div class="device-salary border rounded-3 p-3 mb-3">
-      <div class="title mb-2 fw-bold">Chia lương</div>
+      <div class="device-salary border rounded-3 p-3 mb-3">
+        <div class="title mb-2 fw-bold">Chia lương</div>
 
-      <div id="groupContainer">
-        <div class="group-device mb-1">
-          <div class="header d-flex justify-content-between mb-1">
-            <span>Chia lương 1</span>
-            <i class="bi bi-trash3-fill delete-btn"></i>
-          </div>
-          <div class="row g-2">
-            <div class="col-3">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Số tiền"
-                disabled
-                readonly
-              />
+        <div id="groupContainer">
+          <div class="group-device mb-1">
+            <div class="header d-flex justify-content-between mb-1">
+              <span>Chia lương 1</span>
+              <i class="bi bi-trash3-fill delete-btn text-danger" style="cursor: pointer"></i>
             </div>
-            <div class="col-2">
-              <select class="form-select">
-                <option value="">Ăn</option>
-                <option value="">Đi lại</option>
-                <option value="">Nhà cửa</option>
-              </select>
-            </div>
-            <div class="col-2">
-              <input type="text" class="form-control" placeholder="Chi tiết" />
-            </div>
-            <div class="col-2">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Chia phần trăm %"
-              />
-            </div>
-            <div class="col-3">
-              <input type="text" class="form-control" placeholder="Ghi chú" />
+            <div class="row g-2">
+              <div class="col-md-3">
+                <input type="text" name="detailDeviceSalary" class="form-control only-number amoutSalaryDetail bg-body-secondary" placeholder="Số tiền"  readonly />
+              </div>
+              <div class="col-12 col-md-2">
+                <select name="typeDeviceSalary"  class="form-select typeDeviceSalary">
+                  <option value="ăn">Ăn</option>
+                  <option value="Đi">Đi lại</option>
+                  <option value="Nhà">Nhà cửa</option>
+                </select>
+              </div>
+              <div class="col-12 col-md-2">
+                <input type="text" name="detailDevice" class="form-control detailDevice" placeholder="Chi tiết: Ex: Ăn cưới" />
+              </div>
+              <div class="col-12 col-md-2">
+                <input type="number"  class="form-control precentDetail only-number" placeholder="Chia phần trăm %" min="0" max="100"/>
+              </div>
+              <div class="col-12 col-md-3">
+                <input type="text" name="note" class="form-control note" placeholder="Ghi chú" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="d-flex justify-content-end">
-        <i class="bi bi-plus-circle-fill" id="btnPlus"></i>
+        <div class="d-flex justify-content-end">
+          <i class="bi bi-plus-circle-fill text-success" style="cursor: pointer" id="btnPlus"></i>
+        </div>
       </div>
-    </div>
+    </form>
 
     <div class="mb-3 submit">
-      <button class="btn btn-dark" id="btnsubmit">submit</button>
+      <button form="form1" type="submit" class="btn btn-dark" id="btnsubmit">submit</button>
     </div>
-    <div class="col-12 table">
-      <div class="wrapper border rounded-3 p-3">
-        <div class="d-flex justify-content-end search mb-2">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            placeholder="Search"
-            style="width: 150px"
-          />
-        </div>
-        <div class="table-responsive rounded-3">
-          <table class="table table-bordered table-hover table-striped">
-            <thead>
-              <tr>
-                <th>NO.</th>
-                <th>Ngày nhập</th>
-                <th>Số tiền</th>
-                <th>Ngân hàng</th>
-                <th>Ghi chú</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+    <div class="col-12 col-md-12">
+      <div class="scroll-container">
+        <div class="wrapper-table border rounded-3 p-3">
+          <div class="d-flex justify-content-end search mb-2">
+            <input type="text" class="form-control form-control-sm" placeholder="Search" />
+          </div>
+          <div class="table-responsive rounded-3">
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>NO.</th>
+                  <th>Ngày nhập</th>
+                  <th>Số tiền</th>
+                  <th>Ngân hàng</th>
+                  <th>Ghi chú</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -126,36 +108,30 @@
       <label for="" class="form-label">Họ tên</label>
       <input type="text" class="form-control" />
 
- 
-      
-          <label for="" class="form-label">Ngày</label>
-          <input type="date" class="form-control" />
-       
-          <label for="" class="form-label">Loại hình chi tiêu</label>
-          <select class="form-select">
-            <option value="">Ăn</option>
-            <option value="">đi</option>
-            <option value="">chơi</option>
-          </select>
-        
-          <label for="" class="form-label">Chi tiết chi tiêu</label>
-          <select class="form-select">
-            <option value="">Ăn</option>
-            <option value="">đi</option>
-            <option value="">chơi</option>
-          </select>
-       
-      
+      <label for="" class="form-label">Ngày</label>
+      <input type="date" class="form-control" />
+
+      <label for="" class="form-label">Loại hình chi tiêu</label>
+      <select class="form-select">
+        <option value="">Ăn</option>
+        <option value="">đi</option>
+        <option value="">chơi</option>
+      </select>
+
+      <label for="" class="form-label">Chi tiết chi tiêu</label>
+      <select class="form-select">
+        <option value="">Ăn</option>
+        <option value="">đi</option>
+        <option value="">chơi</option>
+      </select>
+
       <label for="" class="form-label">số tiền</label>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control only-number" />
       <label for="" class="form-label">Ghi chú</label>
       <input type="text" class="form-control" />
 
-      <button type="submit" class="mt-3 btn btn-dark" id="submit">
-        Submit
-      </button>
+      <button type="submit" class="mt-3 btn btn-dark" id="submit">Submit</button>
     </form>
   </div>
 </div>
-<script src="/js/inputsalary.js"></script>
-<script></script>
+<script type="module" src="/assets/js/inputsalary.js"></script>

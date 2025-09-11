@@ -1,0 +1,298 @@
+:root {
+  --sidebar-left-size: 18.75rem;
+  --navbar-height: 5.5rem;
+  --sidebar-left-size-collapse: 4rem;
+  --sidebar-left-size-overlay: 0;
+  --sidebar-link-height: 2.5rem;
+  --body-bg: #f1f5f9;
+  --primary-bg: "#6366f1";
+}
+
+/* font  */
+/* @font-face {
+  font-family: "Inter";
+  src: url("../../Font/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./Font/Inter/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+ */
+
+body {
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--body-bg);
+}
+
+.app_header {
+  transition: all 0.3s ease;
+}
+
+#navBar {
+  height: var(--navbar-height);
+  padding-left: var(--sidebar-left-size) !important ;
+}
+
+#navBar.action-collapse {
+  padding-left: var(--sidebar-left-size-collapse) !important ;
+}
+
+#navBar.action-overlay {
+  padding-left: var(--sidebar-left-size-overlay) !important;
+}
+
+.app_header--blur {
+  backdrop-filter: blur(10px);
+}
+
+.search {
+  position: relative;
+  width: 21.875rem;
+}
+
+.search #iconSearch {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+.profile {
+  cursor: pointer;
+}
+.profile span {
+  font-size: 0.9rem;
+}
+.avatar {
+  width: 2.8rem;
+  height: 2.8rem;
+  overflow: hidden;
+  border: none !important;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app_header button {
+  width: 3rem;
+  height: 3rem;
+}
+.box-multi {
+  position: absolute;
+  top: 40px; /* khoảng cách xuống dưới */
+  left: 0;
+  z-index: 10;
+  width: 180px;
+  user-select: none;
+}
+.box-multi::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* đẩy lên trên */
+  left: 20px; /* chỉnh vị trí theo icon/global */
+  border-width: 0 8px 10px 8px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.1));
+}
+.list_hover > li {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.list_hover > li:hover {
+  background-color: #6366f1;
+  border-radius: 7px;
+  color: #fff;
+}
+/* sidebar */
+.app_aside-left--size {
+  width: var(--sidebar-left-size);
+  transition: all 0.3s ease-out;
+  transform: translateX(0%);
+}
+.app_aside-left--size.action-collapse {
+  width: var(--sidebar-left-size-collapse);
+}
+.app_aside-left--size.action-overlay {
+  transform: translateX(-100%);
+}
+.app_aside-link--size {
+  height: var(--sidebar-link-height);
+}
+/* Chữ hiển thị bình thường */
+.app_aside-hide {
+  /* transform: translate(0); */
+  
+  transition: all 0.5s ease; /* Hiệu ứng mượt */
+  text-wrap: nowrap;
+}
+
+/* Khi sidebar collapse / active */
+.app_aside-hide.active {
+  /* transform: translate(300%); */
+  display: none;
+  transition: all 0.5s ease; /* Thu chữ lại */
+}
+
+.app_as ide-link--animation:hover {
+  background-color: #c1c1c187;
+}
+
+.app_aside-link--animation.active {
+  background-color: #6366f1;
+  color: #fff;
+}
+/* Mặc định icon hướng sang phải */
+.btn[aria-expanded="false"] .bi-chevron-right {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+/* Khi mở menu thì xoay 90 độ xuống */
+.btn[aria-expanded="true"] .bi-chevron-right {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease;
+}
+.btn[aria-expanded="true"] {
+  background-color: #eeeeef;
+}
+.custom-offcanvas {
+  width: 350px !important; /* hoặc 400px / 60% tùy bạn */
+  border-radius: 12px 0 0 12px;
+}
+.setting-item {
+  padding: 10px 5px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+/* Mobile: từ 300px → 767.98px */
+
+/* main */
+.app_main--size
+{
+  background-color: #eeeeef;
+
+  padding-left: var(--sidebar-left-size) ;
+  padding-top: var(--navbar-height) ;
+  transition: all 0.3s ease !important;
+
+}
+.app_main--size.action-collapse
+{
+  padding-left: var(--sidebar-left-size-collapse) !important;
+}
+.app_main--size.action-overlay
+{
+  padding-left: var(--sidebar-left-size-overlay) !important;
+}
+
+@media (max-width: 767.98px) { 
+  
+  /* Sidebar ẩn mặc định */
+  .app_aside-left--size {
+    transform: translateX(0);
+    width: var(--sidebar-left-size-overlay);
+  }
+
+  /* NavBar không cần chừa chỗ cho sidebar */
+  #navBar {
+    padding-left: 0rem !important;
+  }
+
+  .profile span {
+    font-size: 12px;
+  }
+  .multi-lang {
+    position: relative;
+    font-size: 12px;
+  }
+  .app_aside-left--size {
+    display: block;
+    width: 105% !important;
+    transform: translateX(-1rem);
+    padding-bottom: 2.5rem !important;
+    margin-top: 4.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-left: 2rem !important;
+  }
+  .app_aside-left--size.action-collapse {
+    display: block;
+    width: var(--sidebar-left-size-overlay) !important;
+    padding-bottom: 2.5rem !important;
+    margin-top: 4.5rem !important;
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+  #navBar.action-collapse {
+    padding-left: 0 !important;
+  }
+  .app_main--size
+{
+  background-color: #eeeeef;
+
+  padding-left: 0 !important ;
+  padding-top: var(--navbar-height) ;
+  
+}
+  .app_main--size.action-collapse
+{
+  padding-left: var(--sidebar-left-size-overlay) !important;
+  
+}
+.app_main--size.action-overlay
+{
+  padding-left: var(--sidebar-left-size-overlay) !important;
+  
+}
+
+}
+
+@media (max-width: 991.98px) {  }
+
+
+@media (max-width: 1199.98px) {  }
+
+
+@media (max-width: 1399.98px) { 
+
+
+  
+ }
+
+
+
+html[data-bs-theme="dark"] {
+  body {
+    background-color: #343434;
+  }
+  #appAside {
+    background-color: #212529 !important;
+  }
+
+  .app_main--size
+  {
+    background-color: #343434;
+  }
+  .app_aside-link--animation:hover {
+    background-color: var(--fii-sw-gray-800) !important;
+  }
+
+  .app_aside-link--animation.active:hover {
+    background-color: #6366f1 !important;
+    color: #fff !important;
+  }
+
+  .btn[aria-expanded="true"] {
+    background-color: var(--fii-sw-gray-700) !important;
+  }
+}
